@@ -13,10 +13,18 @@ function myFilter(array, test) {
   return filtered;
 }
 
+// implement partial app function
 function partial(fn, ...args) {
   console.log(args);
   const newFn = (...remainingArgs) => fn(...args, ...remainingArgs);
   return newFn;
+}
+
+// implement the binding of a function to specific context
+function simpleBind(fn, context, ...args) {
+  // This binds the function to the given context and preset arguments
+  const fixedThisBinderFunc = fn.bind(context, ...args);
+  return fixedThisBinderFunc;
 }
 
 function myTraditionalFunction() {

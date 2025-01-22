@@ -13,6 +13,12 @@ function myFilter(array, test) {
   return filtered;
 }
 
+function partial(fn, ...args) {
+  console.log(args);
+  const newFn = (...remainingArgs) => fn(...args, ...remainingArgs);
+  return newFn;
+}
+
 function myTraditionalFunction() {
 
 }

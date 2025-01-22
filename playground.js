@@ -27,6 +27,19 @@ function simpleBind(fn, context, ...args) {
   return fixedThisBinderFunc;
 }
 
+// implement map functionality
+function myMap(array, transform) {
+  console.log(...array);
+
+  const newAriana = [];
+  for (let e of array) {
+    const newE = transform(e);
+    newAriana.push(newE);
+  }
+  console.log(newAriana.length);
+  return newAriana;
+}
+
 function myTraditionalFunction() {
 
 }

@@ -30,7 +30,6 @@ function simpleBind(fn, context, ...args) {
 // implement map functionality
 function myMap(array, transform) {
   console.log(...array);
-
   const newAriana = [];
   for (let e of array) {
     const newE = transform(e);
@@ -40,8 +39,12 @@ function myMap(array, transform) {
   return newAriana;
 }
 
-function myTraditionalFunction() {
-
+// write traditional JS function with spread/rest operator in-place of args
+function myTraditionalFunction(...args) {
+  const words = [...args];
+  const string = words.toString();
+  return `Hello ${words}`;
 }
 
-const myArrowFunction = () => {}
+// write modern ES6 modern arrow expression with an 'un-bound' lexical scope
+const myArrowFunction = (arg1, arg2) => {arg2 * arg2}

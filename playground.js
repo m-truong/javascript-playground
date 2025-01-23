@@ -51,5 +51,13 @@ const myArrowFunction = (arg1, arg2) => {arg2 * arg2}
 
 // JS functions have .length property, which reflects the number of declared parameters
 // ...in the function's definition
-function example(a, b, c) {}
+// new term Arity means the total # of arguments a function accepts
+// Traditional JS functions implicitly return 'undefined'
+function example(a, b, c) {
+  return a*b*c;
+}
 console.log(example.length); // Output: 3
+
+// Does not count default or rest parameters.
+function example(a, b = 42, ...rest) {}
+console.log(example.length); // Output: 1 (only `a` is counted)

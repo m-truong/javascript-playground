@@ -13,9 +13,9 @@ function myFilter(array, test) {
   return filtered;
 }
 
-// implement partial app function
+// implement partial app function - pre-fill args of a function to be invoked later
 function partial(fn, ...args) {
-  console.log(args);
+  // console.log(args);
   const newFn = (...remainingArgs) => fn(...args, ...remainingArgs);
   return newFn;
 }
@@ -29,7 +29,7 @@ function simpleBind(fn, context, ...args) {
 
 // implement map functionality
 function myMap(array, transform) {
-  console.log(...array);
+  // console.log(...array);
   const newAriana = [];
   for (let e of array) {
     const newE = transform(e);
@@ -48,3 +48,8 @@ function myTraditionalFunction(...args) {
 
 // write modern ES6 modern arrow expression with an 'un-bound' lexical scope
 const myArrowFunction = (arg1, arg2) => {arg2 * arg2}
+
+// JS functions have .length property, which reflects the number of declared parameters
+// ...in the function's definition
+function example(a, b, c) {}
+console.log(example.length); // Output: 3

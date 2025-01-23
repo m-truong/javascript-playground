@@ -15,7 +15,6 @@ function myFilter(array, test) {
 
 // implement partial app function - pre-fill args of a function to be invoked later
 function partial(fn, ...args) {
-  // console.log(args);
   const newFn = (...remainingArgs) => fn(...args, ...remainingArgs);
   return newFn;
 }
@@ -86,3 +85,27 @@ console.log(example.length); // Output: 1 (only `a` is counted)
 
   // Practice JS functional-programming 'Currying technique'
 // Currying is a technique in functional programming where a function that takes multiple arguments is transformed into a series of functions, each taking a single argument.
+// Yes, return ends the current function’s execution, but in currying, each function returns another function until the chain is complete.
+// •	Currying relies on functions returning other functions to continue the chain of calls.
+// •	Execution only truly ends when a final result (not a function) is returned.
+
+/**
+ * A closure is created when:
+	1.	A function is defined inside another function.
+	2.	The inner function remembers and has access to the variables and parameters of the outer function, even after the outer function has completed execution.
+ */
+
+  // Implement a recursive callback sequence of functions that'll IMPLICITLY pool
+  // ...and pre-fill arguments until all argumentsfrom the original fn()
+  // ...are completely collected, and then call the original fn()
+function curry(fn, arity = fn.length) {
+  return function curried(...args) {
+    if (args.length >= arity) {
+      // If enough arguments are provided, execute the function
+      return fn(...args);
+    } else {
+      // Otherwise, return a new function to collect more arguments
+      return (...nextArgs) => curried(...args, ...nextArgs);
+    }
+  };
+}

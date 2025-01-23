@@ -61,3 +61,28 @@ console.log(example.length); // Output: 3
 // Does not count default or rest parameters.
 function example(a, b = 42, ...rest) {}
 console.log(example.length); // Output: 1 (only `a` is counted)
+
+// Practical Advice
+// 	•	Readable Code: It’s best to choose descriptive names that make the function’s purpose clear.
+// 	•	Short vs. Long: Use shorter names for general-purpose functions and longer, more descriptive names for domain-specific functions.
+// 	•	Avoid Overly Generic Names: Avoid names like data, info, or value unless their meaning is clear from the context.
+
+/**
+ * Rules for Naming Parameters
+	1.	Valid JavaScript Identifiers:
+	•	Parameter names must follow the rules for variable naming:
+	•	Must start with a letter, _, or $.
+	•	Cannot start with a number.
+	•	Cannot use reserved keywords (like class, return, etc.).
+	•	No special characters (e.g., @, #, etc., are not allowed).
+ */
+
+  /**
+   * Postfix (x++ or x--)
+   * 	•	The operation increments or decrements the value of x after the current expression is evaluated.
+   * vs. Prefix (++x or --x)
+   * The operation increments or decrements the value of x before the current expression is evaluated.
+   */
+
+  // Practice JS functional-programming 'Currying technique'
+// Currying is a technique in functional programming where a function that takes multiple arguments is transformed into a series of functions, each taking a single argument.

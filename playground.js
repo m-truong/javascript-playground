@@ -99,6 +99,10 @@ console.log(example.length); // Output: 1 (only `a` is counted)
   // ...and pre-fill arguments until all argumentsfrom the original fn()
   // ...are completely collected, and then call the original fn()
 function curry(fn, arity = fn.length) {
+  // this returns a function containing an if-else block for 2-possible options
+  // only call the final function first
+  // else default to calling the same curried function
+  // until there are no arguments left in the invisible arguments
   return function curried(...args) {
     if (args.length >= arity) {
       // If enough arguments are provided, execute the function
